@@ -17,6 +17,8 @@ class pageController extends Controller
     }
 
     public function services(){
-        return view('services');
+        $title = 'SERVICES - ' . rand(0, 100);
+        return view('services', ['title'=> $title]);
     }
+
 };
