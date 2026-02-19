@@ -6,19 +6,23 @@ use Illuminate\Http\Request;
 
 class pageController extends Controller
 {
-   public function mostraData()
+    public function home()
     {
-       $time = ['data' => date('d/m/Y')];
-       return view('contato', $time);
+        $mostrarR = true;
+        return view('home', ['mostrarR' => $mostrarR]);
     }
 
-    public function home(){
-        return view('home');
-    }
-
-    public function services(){
+    public function services()
+    {
+        $mostrarR = false;
         $title = 'SERVICES - ' . rand(0, 100);
-        return view('services', ['title'=> $title]);
+        return view('services', ['title' => $title, 'mostrarR' => $mostrarR]);
     }
 
+    public function mostraData()
+    {
+        $mostrarR = false;
+        $time = date('d/m/Y');
+        return view('contato', ['data' => $time, 'mostrarR' => $mostrarR]);
+    }
 };

@@ -21,8 +21,10 @@
         @yield('content')
     </main>
     <hr>
+
+    <hr>
     <footer>
-        @include('footer')
+        @includeWhen($mostrarR, 'footer')
     </footer>
 </body>
 
