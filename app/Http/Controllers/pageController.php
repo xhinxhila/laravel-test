@@ -8,21 +8,28 @@ class pageController extends Controller
 {
     public function home()
     {
-        $mostrarR = true;
-        return view('home', ['mostrarR' => $mostrarR]);
+        return view('home');
     }
 
     public function services()
     {
-        $mostrarR = false;
+        $services = [
+            ['name' => 'Serviço 01', 'description' => 'descrição de serviço 01'],
+            ['name' => 'Serviço 02', 'description' => 'descrição de serviço 02'],
+            ['name' => 'Serviço 03', 'description' => 'descrição de serviço 03'],
+            ['name' => 'Serviço 04', 'description' => 'descrição de serviço 04'],
+            ['name' => 'Serviço 05', 'description' => 'descrição de serviço 05'],
+        ];
+
+        // titulo aleatorio
         $title = 'SERVICES - ' . rand(0, 100);
-        return view('services', ['title' => $title, 'mostrarR' => $mostrarR]);
+        return view('services', ['title' => $title, 'services' => $services]);
     }
 
     public function mostraData()
     {
-        $mostrarR = false;
+
         $time = date('d/m/Y');
-        return view('contato', ['data' => $time, 'mostrarR' => $mostrarR]);
+        return view('contato', ['data' => $time]);
     }
 };
