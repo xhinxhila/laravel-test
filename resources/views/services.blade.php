@@ -6,7 +6,7 @@
     <h1>SERVICES</h1>
     <ul>
         @foreach ($services as $services)
-            <li>{{$services['name']}} {{ $services['description'] }}</li>
+            <li><p>{{$services['name']}} {{ $services['description'] }}</p></li>
         @endforeach
     </ul>
 @endsection
